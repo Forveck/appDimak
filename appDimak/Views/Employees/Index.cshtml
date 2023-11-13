@@ -1,5 +1,4 @@
-﻿@page
-@model appDimak.Views.Employees.IndexModel
+﻿@model IEnumerable<appDimak.Models.Employee>
 
 @{
     ViewData["Title"] = "Index";
@@ -8,67 +7,67 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].LastName)
+                @Html.DisplayNameFor(model => model.LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].FirstName)
+                @Html.DisplayNameFor(model => model.FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].Title)
+                @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].TitleOfCourtesy)
+                @Html.DisplayNameFor(model => model.TitleOfCourtesy)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].BirthDate)
+                @Html.DisplayNameFor(model => model.BirthDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].HireDate)
+                @Html.DisplayNameFor(model => model.HireDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].Address)
+                @Html.DisplayNameFor(model => model.Address)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].City)
+                @Html.DisplayNameFor(model => model.City)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].Region)
+                @Html.DisplayNameFor(model => model.Region)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].PostalCode)
+                @Html.DisplayNameFor(model => model.PostalCode)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].Country)
+                @Html.DisplayNameFor(model => model.Country)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].HomePhone)
+                @Html.DisplayNameFor(model => model.HomePhone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].Extension)
+                @Html.DisplayNameFor(model => model.Extension)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].Photo)
+                @Html.DisplayNameFor(model => model.Photo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].Notes)
+                @Html.DisplayNameFor(model => model.Notes)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].PhotoPath)
+                @Html.DisplayNameFor(model => model.PhotoPath)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employee[0].ReportsToNavigation)
+                @Html.DisplayNameFor(model => model.ReportsToNavigation)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Employee) {
+@foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.LastName)
@@ -122,9 +121,9 @@
                 @Html.DisplayFor(modelItem => item.ReportsToNavigation.EmployeeId)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.EmployeeId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.EmployeeId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.EmployeeId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
             </td>
         </tr>
 }

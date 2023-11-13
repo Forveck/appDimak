@@ -1,5 +1,4 @@
-﻿@page
-@model appDimak.Views.Products.DeleteModel
+﻿@model appDimak.Models.Product
 
 @{
     ViewData["Title"] = "Delete";
@@ -12,65 +11,65 @@
     <h4>Product</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Product.ProductName)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductName)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Product.ProductName)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProductName)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Product.QuantityPerUnit)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.QuantityPerUnit)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Product.QuantityPerUnit)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.QuantityPerUnit)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Product.UnitPrice)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UnitPrice)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Product.UnitPrice)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UnitPrice)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Product.UnitsInStock)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UnitsInStock)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Product.UnitsInStock)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UnitsInStock)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Product.UnitsOnOrder)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UnitsOnOrder)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Product.UnitsOnOrder)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UnitsOnOrder)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Product.ReorderLevel)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReorderLevel)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Product.ReorderLevel)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReorderLevel)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Product.Discontinued)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Discontinued)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Product.Discontinued)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Discontinued)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Product.Category)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Product.Category.CategoryId)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category.CategoryId)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Product.Supplier)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Supplier)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Product.Supplier.SupplierId)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Supplier.SupplierId)
         </dd>
     </dl>
     
-    <form method="post">
-        <input type="hidden" asp-for="Product.ProductId" />
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ProductId" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
+        <a asp-action="Index">Back to List</a>
     </form>
 </div>
